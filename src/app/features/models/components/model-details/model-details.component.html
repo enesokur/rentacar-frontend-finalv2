@@ -1,0 +1,16 @@
+<div class="card mb-3 container">
+  <img src="{{ modelDetails.imageUrl }}" class="card-img-top" alt="..." />
+  <div class="card-body" appHighlight fontWeight="600">
+    <h5 class="card-title">{{ modelDetails.name }}</h5>
+    <p class="card-text" class="card-text">
+      <span>Brand:</span> {{ modelDetails.brand.name }}
+    </p>
+    <p class="card-text">
+      <span>Daily Price:</span>
+      {{ modelDetails.dailyPrice | vatAdd : 20 | currency : "₺" }}
+    </p>
+    <p class="card-text">
+      <span>Model Year:</span> {{ modelDetails.modelYear }}
+    </p>
+  </div>
+</div>

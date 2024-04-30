@@ -1,0 +1,21 @@
+<ul class="list-group">
+  <li class="list-group-item list-group-item-action" *ngFor="let car of cars">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span>
+        {{ car.model.name }}
+      </span>
+      <span>
+        {{ car.model.brand.name }}
+      </span>
+      <span class="text-uppercase">
+        {{ car.plate }}
+      </span>
+      <span>
+        {{ car.state }}
+      </span>
+      <div class="ud-buttons d-flex justify-content-between align-items-center">
+        <button class="btn btn-warning" (click)="rentACar(car.id)">Rent</button>
+      </div>
+    </div>
+  </li>
+</ul>

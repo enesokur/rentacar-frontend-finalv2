@@ -1,0 +1,25 @@
+<ul class="list-group">
+  <li
+    (click)="onBrandClick(null)"
+    class="list-group-item list-group-item-action"
+  >
+    <p class="container">All</p>
+  </li>
+  <li
+    (click)="onBrandClick(brand.id)"
+    class="list-group-item list-group-item-action"
+    *ngFor="let brand of list"
+  >
+    <div class="container d-flex justify-content-between align-items-center">
+      <span>
+        {{ brand.name }}
+      </span>
+      <div class="ud-buttons d-flex justify-content-between align-items-center">
+        <button class="btn btn-success" (click)="navigateToUpdate(brand.id)">
+          Update
+        </button>
+        <button class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </li>
+</ul>

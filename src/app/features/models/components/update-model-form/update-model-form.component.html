@@ -1,0 +1,86 @@
+<form class="my-3 container" [formGroup]="form" (submit)="onFormSubmit()">
+  <div class="input-group">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >Model Name</span
+    >
+    <input
+      type="text"
+      formControlName="name"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+    />
+  </div>
+  <div class="mt-3" *ngIf="form.invalid && form.get('name')?.touched">
+    <p class="text-danger fw-bold">
+      {{ form.get("name")?.errors | errorMessages }}
+    </p>
+  </div>
+  <!-- <div class="input-group my-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >Brand Id</span
+    >
+    <input
+      type="number"
+      formControlName="brandId"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+    />
+  </div> -->
+  <div class="input-group my-3">
+    <label class="input-group-text" for="inputGroupSelect01">Brand Name</label>
+    <select
+      class="form-select"
+      id="inputGroupSelect01"
+      formControlName="brandName"
+    >
+      <option
+        *ngFor="let brand of allBrands"
+        [selected]="brand.id == modelToUpdate.brand.id"
+      >
+        {{ brand.name }}
+      </option>
+    </select>
+  </div>
+  <div *ngIf="form.invalid && form.get('brandName')?.touched">
+    <p class="text-danger fw-bold">
+      {{ form.get("brandName")?.errors | errorMessages }}
+    </p>
+  </div>
+  <div class="input-group">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >Model Year</span
+    >
+    <input
+      type="number"
+      formControlName="modelYear"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+    />
+  </div>
+  <div class="mt-3" *ngIf="form.invalid && form.get('modelYear')?.touched">
+    <p class="text-danger fw-bold">
+      {{ form.get("modelYear")?.errors | errorMessages }}
+    </p>
+  </div>
+  <div class="input-group my-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >Daily Price</span
+    >
+    <input
+      type="number"
+      formControlName="dailyPrice"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+    />
+  </div>
+  <div *ngIf="form.invalid && form.get('dailyPrice')?.touched">
+    <p class="text-danger fw-bold">
+      {{ form.get("dailyPrice")?.errors | errorMessages }}
+    </p>
+  </div>
+  <button type="submit" class="btn btn-success">Update Model</button>
+</form>

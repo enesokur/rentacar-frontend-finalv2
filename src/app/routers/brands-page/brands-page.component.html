@@ -1,0 +1,28 @@
+<div class="d-flex container my-3">
+  <input
+    class="form-control me-3 w-25"
+    type="text"
+    placeholder="Search"
+    aria-label="Search"
+    [(ngModel)]="searchBrandName"
+  />
+</div>
+@if (!isBrandChoosen) {
+<app-brands-list (selectBrand)="onBrandSelect($event)"></app-brands-list>
+<div class="container my-3">
+  <button class="btn btn-primary" [routerLink]="['createbrand']">
+    New Brand
+  </button>
+</div>
+} @else {
+<app-models-list
+  [brandId]="selectedBrandId"
+  [searchBrandName]="searchBrandName"
+>
+</app-models-list>
+<div class="container my-3">
+  <button class="btn btn-primary" [routerLink]="['/home/models/createmodel']">
+    New Model
+  </button>
+</div>
+}

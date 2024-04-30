@@ -1,0 +1,9 @@
+Counter: {{ getCounter }}
+<button (click)="counterHandler(1)">+</button>
+<button (click)="counterHandler(-1)">-</button>
+
+<p *ngIf="isCounterZero">Counter is zero</p>
+<p *ngIf="getCounter < 0">Counter is negative</p>
+@if (getCounter > 0) {
+<p>Counter is positive</p>
+}

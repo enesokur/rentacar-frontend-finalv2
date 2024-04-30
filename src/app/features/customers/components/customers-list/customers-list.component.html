@@ -1,0 +1,64 @@
+<ul class="list-group">
+  <li
+    class="list-group-item list-group-item-action"
+    *ngFor="let customer of customers"
+  >
+    <div class="container d-flex justify-content-between align-items-center">
+      <span>
+        {{ customer.id }}
+      </span>
+      <span>
+        {{ customer.firstName }}
+      </span>
+      <span>
+        {{ customer.lastName }}
+      </span>
+      <span>
+        {{ customer.email }}
+      </span>
+      <div class="ud-buttons d-flex justify-content-between align-items-center">
+        <button class="btn btn-success">Update</button>
+        <button class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- <div class="table-wrap container">
+  <table class="sortable">
+    <caption>
+      <span class="sr-only">, column headers with buttons are sortable.</span>
+    </caption>
+    <thead>
+      <tr>
+        <th>
+          <button>
+            Id
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+        <th aria-sort="ascending">
+          <button>
+            First Name
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+        <th>
+          <button>
+            Last Name
+            <span aria-hidden="true"></span>
+          </button>
+        </th>
+        <th class="no-sort">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastName }}</td>
+        <td>{{ customer.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

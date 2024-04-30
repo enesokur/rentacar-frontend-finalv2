@@ -1,0 +1,4 @@
+CanActivate: Bu guard, bir rotaya erişim izni verilip verilmeyeceğini belirler.Eğer rotaya erişim izni yoksa, kullanıcı başka bir sayfaya yönlendirilir. Genellikle kullanıcı girişi gibi yetkilendirme kontrollerinde kullanılır.
+CanActivateChild: Bu guard, bir rotanın alt rotalarına erişim izni verilip verilmeyeceğini belirler. Yani, bir rotanın altındaki diğer rotalara erişim izni verip verilmeyeceğini kontrol eder.
+CanDeactivate: Bu guard, bir rotadan ayrılma işlemi gerçekleşmeden önce kullanıcıya bir onaylama mesajı gösterilip gösterilmeyeceğini belirler. Genellikle form doldurma gibi işlemlerde kullanılır.
+Resolve: Bu guard, bir rotanın yüklenmesi öncesinde belirli bir veriyi alıp rotanın yüklenmesini bekler. Özellikle rotanın yüklenmesi için gerekli olan verilerin tamamen alınması gerektiğinde kullanılır.

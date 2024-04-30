@@ -1,0 +1,21 @@
+<form [formGroup]="form" (submit)="onFormSubmit()" class="my-3 container">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >Brand Name</span
+    >
+    <input
+      type="text"
+      formControlName="name"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      appNoCharacterInput
+    />
+  </div>
+  <div *ngIf="form.invalid && form.get('name')?.touched">
+    <p class="text-danger fw-bold">
+      {{ form.get("name")?.errors | errorMessages }}
+    </p>
+  </div>
+  <button [appButton]="form.invalid">Add Brand</button>
+</form>
